@@ -1,0 +1,42 @@
+* {
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.bg-blue{
+    background-color: #2E294E!important;
+}
+
+.color-blue {
+    color: #2E294E!important;
+}
+
+.primary-blue {
+    border: solid .1em #2E294E;
+    color: #2E294E;
+}
+
+.primary-blue:hover {
+    background-color: #2E294E;
+    color: #EFE;
+}
+
+.hover-color-blue:hover {
+    color: #2E294E!important;
+}
+
+.search-field {
+    position: relative;
+}
+
+.search-field>i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: .6em;
+}
+
+.search-field input {
+    padding-left: 30px;
+}
+
