@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 use JetBrains\PhpStorm\ArrayShape;
 
 class UpdateUserRequest extends FormRequest
@@ -25,6 +26,8 @@ class UpdateUserRequest extends FormRequest
      */
     #[ArrayShape(['name' => "string", 'email' => "string[]", 'bio' => "string", 'status' => "array"])] public function rules(): array
     {
-        return User::getUpdateValidationRules();
+        $rules = User::getUpdateValidationRules();
+        $rules['email'][] = 'unique:users,email,'.$this->user->id;
+        return $rules;
     }
 }
