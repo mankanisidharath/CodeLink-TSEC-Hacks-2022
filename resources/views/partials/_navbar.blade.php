@@ -20,8 +20,12 @@
 
         <!-- Login/Sign up -->
         <div class="hidden md:flex items-center space-x-1">
-          <a href="" class="px-3 text-gray-200 hover:text-gray-300">Login</a>
-          <a href="" class="py-2 px-4 border-2 border-gray-200 text-gray-200 hover-color-blue hover:bg-gray-200 rounded transition duration-300">Signup</a>
+            @if(!auth()->check())
+                <a href="{{ route('login') }}" class="px-3 text-gray-200 hover:text-gray-300">Login</a>
+                <a href="{{ route('register') }}" class="py-2 px-4 border-2 border-gray-200 text-gray-200 hover-color-blue hover:bg-gray-200 rounded transition duration-300">Signup</a>
+            @else
+                <div class="text-gray-200 text-base">{{ auth()->user()->name }}</div>
+            @endif
         </div>
       </div>
     </div>
