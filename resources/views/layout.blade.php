@@ -26,5 +26,8 @@
 
         <!-- Projects -->
         @include('partials._projects')
+
+        {{-- Cards --}}
+        @include('partials._card')
 </body>
 </html>
